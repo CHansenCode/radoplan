@@ -1,3 +1,6 @@
+import Head from 'next/head';
+
+import { Nav } from './Nav';
 import { Map } from 'components';
 
 // import { GlobalStyles, Main, Meta, Nav, Dashboard } from './';
@@ -5,18 +8,21 @@ import { Map } from 'components';
 export const Layout = ({ ...props }) => {
   return (
     <>
-      {/* <Meta {...props} />
-      <GlobalStyles {...props} /> */}
+      <Head>
+        <title>Radoplan</title>
+        <meta name="description" content="Production planning excellence" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
       <main className="main_layout_container">
-        <>{props.children}</>
+        <Nav />
+
+        <div className="main_layout_pages">{props.children}</div>
 
         <div className="main_layout_svg_map">
           <Map />
         </div>
       </main>
-
-      {/* <Main {...props} /> */}
 
       <style jsx>
         {`
@@ -37,6 +43,13 @@ export const Layout = ({ ...props }) => {
 
             border-left: thin solid teal;
             box-shadow: inset 0 0 2rem -1rem black;
+          }
+
+          .main_layout_pages {
+            height: 100%;
+            width: 100%;
+
+            padding: 1rem;
           }
         `}
       </style>

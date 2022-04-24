@@ -11,6 +11,7 @@ export default function Home() {
       </Head>
 
       <h2>Landing Page</h2>
+      <h4>stats:</h4>
     </div>
   );
 }
