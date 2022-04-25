@@ -1,4 +1,4 @@
-import { PageHeader, List } from 'components';
+import { PageHeader, TimeController } from 'components';
 
 export default function Inventory(props) {
   console.log(props);
@@ -6,11 +6,7 @@ export default function Inventory(props) {
   return (
     <div>
       <PageHeader title="Inventory">
-        <div>
-          {`< `}
-          {`today`}
-          {` >`}
-        </div>
+        <TimeController />
       </PageHeader>
 
       <InventoryLegend />
