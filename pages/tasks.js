@@ -1,9 +1,9 @@
 import { PageHeader, List } from 'components';
 
-export default function Home() {
+export default function Tasks() {
   return (
     <div>
-      <PageHeader title="Statistics">
+      <PageHeader title="Tasks">
         <div>
           {`< `}
           {`today`}
@@ -11,12 +11,7 @@ export default function Home() {
         </div>
       </PageHeader>
 
-      <div>
-        <div>
-          <h4>title: </h4>
-          <h5>Something was made</h5>
-        </div>
-      </div>
+      <div>tasks</div>
     </div>
   );
 }

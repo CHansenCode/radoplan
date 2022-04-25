@@ -15,12 +15,14 @@ export const Layout = ({ ...props }) => {
       </Head>
 
       <main className="main_layout_container">
-        <Nav />
+        <div className="main_layout_pages">
+          <div className="pages">{props.children}</div>
 
-        <div className="main_layout_pages">{props.children}</div>
+          <Nav />
+        </div>
 
         <div className="main_layout_svg_map">
-          <Map />
+          <Map data={props.data} />
         </div>
       </main>
 
@@ -50,6 +52,23 @@ export const Layout = ({ ...props }) => {
             width: 100%;
 
             padding: 1rem;
+
+            display: grid;
+            grid-template:
+              'pages' 1fr
+              'nav' auto / 1fr;
+            gap: 1.5rem;
+          }
+
+          .pages {
+            height: 100%;
+            width: 100%;
+
+            padding: 1rem;
+
+            border: thin solid rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            box-shadow: inset 0 0 1rem -0.5rem rgba(0, 0, 0, 0.2);
           }
         `}
       </style>
