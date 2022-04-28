@@ -1,6 +1,8 @@
 import { PageHeader, List } from 'components';
 
-export default function Tasks() {
+export default function Tasks({ data }) {
+  console.log(data.taskData);
+
   return (
     <div>
       <PageHeader title="Tasks">

@@ -3,14 +3,29 @@ import React from 'react';
 import css from './Map.module.scss';
 
 export const Map = ({ data }) => {
-  console.log(data);
   return (
     <>
-      <div className="main_map">
-        {data.deskData.map((d, i) => (
-          <Table data={d} />
-        ))}
-      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="100%"
+        width="100%"
+        viewBox="0 0 3600 900"
+        className="main_map"
+      >
+        <></>
+
+        <path d="M457.5,389.6V529.4h-14V464H367.7v65.4h-14V389.6h14v62.8h75.8V389.6Z" />
+
+        <>
+          {data.deskData.map((d, i) => (
+            <path
+              d="M457.5,389.6V529.4h-14V464H367.7v65.4h-14V389.6h14v62.8h75.8V389.6Z"
+              key={`table${i}`}
+              data={d}
+            />
+          ))}
+        </>
+      </svg>
 
       <style jsx>
         {`
@@ -19,78 +34,9 @@ export const Map = ({ data }) => {
             height: 100%;
             width: 100%;
 
-            background: rgba(0, 100, 100, 0.1);
-          }
-        `}
-      </style>
-    </>
-  );
-};
+            border: thin solid red;
 
-const Table = ({ data }) => {
-  return (
-    <>
-      <div className="map_table">
-        <div className="map_table_inner">
-          <h4>{data.number}</h4>
-
-          <div className="map_table_chair">
-            <div></div>
-          </div>
-        </div>
-      </div>
-
-      <style jsx>
-        {`
-          .map_table {
-            position: absolute;
-            top: ${data.top};
-            left: ${data.left};
-
-            height: 3rem;
-            width: 6rem;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: white;
-
-            border: thin solid;
-            box-shadow: 0 0 1rem -0.5rem black;
-
-            transform: rotate(${data.rotation}deg);
-          }
-          .map_table_inner {
-            position: relative;
-            height: 100%;
-            width: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .map_table_inner h4 {
-            transform: rotate(${data.rotation}deg);
-          }
-          .map_table_chair {
-            position: absolute;
-            top: calc(100% + 1px);
-            height: 1.5rem;
-            width: 1.5rem;
-
-            border: thin solid;
-            border-bottom: none;
-
-            background: white;
-
-            transform: rotate(180deg);
-          }
-          .map_table_chair div {
-            height: 15%;
-            width: 100%;
-
-            border-bottom: thin solid;
+            background: rgba(0, 100, 100, 0.05);
           }
         `}
       </style>
