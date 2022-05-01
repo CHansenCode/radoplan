@@ -1,34 +1,29 @@
-import Head from 'next/head';
-
-import { Nav } from './Nav';
-import { Map } from 'components';
+import { Map, PageHeader, Navigation } from 'components';
 
 // import { GlobalStyles, Main, Meta, Nav, Dashboard } from './';
 
 export const Layout = ({ ...props }) => {
   return (
     <>
-      <Head>
-        <title>Radoplan</title>
-        <meta name="description" content="Production planning excellence" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <main id="main_container">
+        <aside className="content_container">
+          <PageHeader />
 
-      <main className="main_layout_container">
-        <div className="main_layout_pages">
-          <div className="pages">{props.children}</div>
+          <div className="pages_wrapper">
+            <>{props.children}</>
+          </div>
 
-          <Nav />
-        </div>
+          <Navigation />
+        </aside>
 
-        <div className="main_layout_svg_map">
+        <aside className="map_container">
           <Map data={props.data} />
-        </div>
+        </aside>
       </main>
 
       <style jsx>
         {`
-          .main_layout_container {
+          #main_container {
             position: relative;
             height: 100vh;
             width: 100vw;
@@ -37,17 +32,7 @@ export const Layout = ({ ...props }) => {
             grid-template: 'page chart' 1fr / 1fr 1.5fr;
           }
 
-          .main_layout_svg_map {
-            height: 100%;
-            width: 100%;
-
-            padding: 1rem;
-
-            border-left: thin solid teal;
-            box-shadow: inset 0 0 2rem -1rem black;
-          }
-
-          .main_layout_pages {
+          #main_container .content_container {
             height: 100%;
             width: 100%;
 
@@ -55,20 +40,30 @@ export const Layout = ({ ...props }) => {
 
             display: grid;
             grid-template:
+              'pageHeader' 4rem
               'pages' 1fr
-              'nav' auto / 1fr;
-            gap: 1.5rem;
+              'navigation' 4rem / 1fr;
           }
 
-          .pages {
+          #main_container .content_container .pages_wrapper {
+            position: relative;
             height: 100%;
             width: 100%;
 
             padding: 1rem;
 
             border: thin solid rgba(0, 0, 0, 0.1);
-            border-radius: 1rem;
-            box-shadow: inset 0 0 1rem -0.5rem rgba(0, 0, 0, 0.2);
+            border-radius: 0.5rem;
+
+            box-shadow: 0 0 2rem -0.3rem rgba(0, 0, 0, 0.2);
+          }
+
+          #main_container .map_container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            box-shadow: inset 0 0 2rem -1rem black;
           }
         `}
       </style>

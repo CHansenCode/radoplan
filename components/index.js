@@ -1,6 +1,12 @@
-//
+// base structure
+export * from './Meta';
+export * from './Navigation';
+export * from './PageHeader';
 
-export { Map } from './Map'; //map of the production area
+// main components
+export { Map } from './Map';
+
+// general
+export * from './Logo';
 export { List } from './List';
-export { PageHeader } from './PageHeader';
 export * from './TimeController';

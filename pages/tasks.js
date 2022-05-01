@@ -5,14 +5,6 @@ export default function Tasks({ data }) {
 
   return (
     <div>
-      <PageHeader title="Tasks">
-        <div>
-          {`< `}
-          {`today`}
-          {` >`}
-        </div>
-      </PageHeader>
-
       <div>tasks</div>
     </div>
   );

@@ -29,27 +29,29 @@ export const Nav = props => {
 
   return (
     <>
-      <nav className="nav_main">
-        <div className="links_left">
-          <>
-            {leftLinks.map((l, i) => (
-              <NavBtn key={`${l.as}${i}`} as={l.as} href={l.href} />
-            ))}
-          </>
-        </div>
+      <footer>
+        <nav className="nav_main">
+          <div className="links_left">
+            <>
+              {leftLinks.map((l, i) => (
+                <NavBtn key={`${l.as}${i}`} as={l.as} href={l.href} />
+              ))}
+            </>
+          </div>
 
-        <div className="link_home">
-          <NavBtn exact={true} as={'home'} href={'/'} />
-        </div>
+          <div className="link_home">
+            <NavBtn exact={true} as={'home'} href={'/'} />
+          </div>
 
-        <div className="links_right">
-          <>
-            {rightLinks.map((l, i) => (
-              <NavBtn key={`${l.as}${i}`} as={l.as} href={l.href} />
-            ))}
-          </>
-        </div>
-      </nav>
+          <div className="links_right">
+            <>
+              {rightLinks.map((l, i) => (
+                <NavBtn key={`${l.as}${i}`} as={l.as} href={l.href} />
+              ))}
+            </>
+          </div>
+        </nav>
+      </footer>
 
       <style jsx>
         {`

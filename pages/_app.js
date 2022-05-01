@@ -1,3 +1,4 @@
+import { Meta } from 'components';
 import { Layout } from 'Layout';
 
 import 'styles/style.scss';
@@ -11,9 +12,13 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <Layout data={data}>
-      <Component {...pageProps} data={data} />
-    </Layout>
+    <>
+      <Meta />
+
+      <Layout data={data}>
+        <Component {...pageProps} data={data} />
+      </Layout>
+    </>
   );
 }
 
