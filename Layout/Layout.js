@@ -1,4 +1,5 @@
 import { Map, PageHeader, Navigation } from 'components';
+import { GlobalColors } from './GlobalStyles';
 
 // import { GlobalStyles, Main, Meta, Nav, Dashboard } from './';
 
@@ -21,6 +22,8 @@ export const Layout = ({ ...props }) => {
         </aside>
       </main>
 
+      <GlobalColors />
+
       <style jsx>
         {`
           #main_container {
@@ -36,13 +39,14 @@ export const Layout = ({ ...props }) => {
             height: 100%;
             width: 100%;
 
-            padding: 1rem;
+            padding: 1.5rem 2rem;
 
             display: grid;
             grid-template:
               'pageHeader' 4rem
               'pages' 1fr
               'navigation' 4rem / 1fr;
+            gap: 2rem;
           }
 
           #main_container .content_container .pages_wrapper {

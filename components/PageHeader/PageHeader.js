@@ -9,7 +9,10 @@ export const PageHeader = () => {
     <>
       <header id="pages_header">
         <Logo height="3rem" />
-        <h3>{router.pathname.substring(1)}</h3>
+        <h3>
+          {'> '}
+          {router.pathname.substring(1)}
+        </h3>
       </header>
 
       <style jsx>
@@ -22,7 +25,9 @@ export const PageHeader = () => {
             margin-bottom: 1rem;
           }
           #pages_header h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: gray;
 
             text-transform: uppercase;
             letter-spacing: 2px;

@@ -4,14 +4,6 @@ export default function Workstations(props) {
   return (
     <>
       <div>
-        <PageHeader title="Workstations">
-          <div>
-            {`< `}
-            {`today`}
-            {` >`}
-          </div>
-        </PageHeader>
-
         <List>
           {props.data.deskData.map((d, i) => (
             <WorkstationItem key={`${i}${d.number}`} data={d} />

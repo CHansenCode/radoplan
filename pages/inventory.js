@@ -5,10 +5,6 @@ export default function Inventory(props) {
 
   return (
     <div>
-      <PageHeader title="Inventory">
-        <TimeController />
-      </PageHeader>
-
       <InventoryLegend />
       <InventoryList>
         {props.data.invData.map((d, i) => (

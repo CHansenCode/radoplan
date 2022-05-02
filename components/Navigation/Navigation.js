@@ -1,20 +1,32 @@
-import { NavBtn } from './NavBtn';
+import { NavLink, ButtonStyle } from './';
 
 export const Navigation = props => {
   return (
     <>
       <footer className="nav_wrapper">
         <nav>
-          {navLinks.map((n, i) => (
-            <NavBtn key={n.as} as={n.as} href={n.href} />
-          ))}
+          <NavLink href="/tasks">
+            <ButtonStyle type="tasks" />
+          </NavLink>
+
+          <NavLink href="/workstations">
+            <ButtonStyle type="workstations" />
+          </NavLink>
+
+          <NavLink href="/users">
+            <ButtonStyle type="users" />
+          </NavLink>
+
+          <NavLink href="/inventory">
+            <ButtonStyle type="inventory" />
+          </NavLink>
         </nav>
       </footer>
 
       <style jsx>
         {`
           .nav_wrapper {
-            height: 3rem;
+            height: 4rem;
             width: 100%;
           }
           .nav_wrapper nav {
@@ -22,8 +34,8 @@ export const Navigation = props => {
             width: 100%;
 
             display: flex;
-            align-content: center;
-            gap: 1rem;
+            justify-content: center;
+            gap: 1.5rem;
           }
         `}
       </style>

@@ -6,14 +6,6 @@ export default function Users(props) {
   return (
     <>
       <div>
-        <PageHeader title="Workers">
-          <div>
-            {`< `}
-            {`today`}
-            {` >`}
-          </div>
-        </PageHeader>
-
         <UserList>
           <Legend></Legend>
           {props.data.userData.map((u, i) => (

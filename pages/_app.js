@@ -247,6 +247,34 @@ const taskData = [
     _id: 'asldkals12312h3j1h23',
     name: 'Bottom lid assembly',
     inventoryItems: [],
+    booklet: [
+      {
+        title: 'lalalal',
+        richText: 'askjdaksjdkas',
+        image: 'alsdkasd',
+        inventoryItems: [
+          {
+            name: 'lasldas',
+            count: 2,
+          },
+        ],
+        warning: 'i am a warning',
+        alert: 'i am an alert',
+      },
+      {
+        title: 'lalalal',
+        richText: 'askjdaksjdkas',
+        image: 'alsdkasd',
+        inventoryItems: [
+          {
+            name: 'lasldas',
+            count: 2,
+          },
+        ],
+        warning: 'i am a warning',
+        alert: 'i am an alert',
+      },
+    ],
   },
 ];
 
